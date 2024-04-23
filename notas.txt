@@ -1,0 +1,8 @@
+yarn create vite@latest miapp
+npm install -D tailwindcss postcss autoprefixer
+npx tailwindcss init -p
+https://tailwindcss.com/docs/guides/vite#vue
+*se agrego a style.css y tailwindcss.config.cjs
+yarn add vue-router@next 
+yarn add vuex@4
+npm install -D @tailwindcss/forms  =>con esto reseteamos los estilos del formulario
