@@ -18,20 +18,26 @@
 </template>
 <script lang="ts" setup>
 import { Ref, computed, onMounted, ref, watch } from "vue";
-import store from "../store";
+// import store from "../store";
 import { useRoute } from "vue-router";
 import Meals from "../components/Meals.vue";
+import peticiones from "../store2/index";
+
+const store = peticiones();
 
 const route = useRoute();
 const letters: Ref<any> = ref("ABCDEFGHIJKLMNOPQRSTUVWXYZ");
 letters.value = letters.value.split("");
-const meals = computed(() => store.state.mealsByLetter);
+// const meals = computed(() => store.state.mealsByLetter);
+const meals = computed(() => store.mealsByLetter);
 onMounted(() => {
-  store.dispatch("searchMealsByLetter", route.params.letter);
+  // store.dispatch("searchMealsByLetter", route.params.letter);
+  store.searchMealsByLetter(route.params.letter);
 });
 
 watch(route, (newValue, olValue) => {
-  store.dispatch("searchMealsByLetter", route.params.letter);
+  // store.dispatch("searchMealsByLetter", route.params.letter);
+  store.searchMealsByLetter(route.params.letter);
 });
 </script>
 <style scopped>

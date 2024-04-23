@@ -8,13 +8,13 @@
   </div>
 </template>
 <script setup lang="ts">
-import { onMounted, ref } from "vue";
+import { Ref, onMounted, ref } from "vue";
 import axiosClient from "../axiosClient.ts";
 import Meals from "../components/Meals.vue";
 import Slider from "../components/Slider.vue";
 
-const meals: Array<string> = ref<Array<string>>([]);
-const mealsSlide: Array<string> = ref<Array<string>>([]);
+const meals: Ref<Array<any>> = ref<Array<any>>([]);
+const mealsSlide: Ref<Array<any>> = ref<Array<any>>([]);
 onMounted(async () => {
   try {
     for (let index = 0; index < 9; index++) {
@@ -31,5 +31,3 @@ onMounted(async () => {
 });
 </script>
 <style lang=""></style>
-
-<!-- https://www.youtube.com/watch?v=cfiN8lCA3RM&ab_channel=TheCodeholic-->

@@ -9,11 +9,11 @@
       @change="searchMeals"
     />
     <router-link
+      v-for="(ingredient, index) in computedIngredient"
       :to="{
         name: 'byIngredient',
         params: { ingredient: ingredient.strIngredient },
       }"
-      v-for="(ingredient, index) in computedIngredient"
       :key="index"
       class="block bg-white rounded p-3 mb-3 shadow"
     >
@@ -25,14 +25,16 @@
 <script lang="ts" setup>
 import { Ref, computed, onMounted, ref } from "vue";
 import axiosClient from "../axiosClient";
-import store from "../store";
+// import store from "../store";
+import peticiones from "../store2/index";
 
+const store = peticiones();
 const ingredients = ref([]);
 const keyword: Ref<string> = ref<string>("");
-const computedIngredient = computed(() => {
+const computedIngredient: Ref<any> = computed(() => {
   if (!computedIngredient) return ingredients;
   return ingredients.value.filter(
-    (item) =>
+    (item: any) =>
       (item.strDescription || "")
         .toLowerCase()
         .includes(keyword.value.toLowerCase()) ||
@@ -46,9 +48,11 @@ onMounted(() => {
 });
 const searchMeals = () => {
   if (keyword.value) {
-    store.dispatch("searchMeals", keyword.value);
+    // store.dispatch("searchMeals", keyword.value);
+    store.searchMeals(keyword.value);
   } else {
-    store.commit("setSearchedMeal", []);
+    // store.commit("setSearchedMeal", []);
+    store.searchedMeals = [];
   }
 };
 </script>

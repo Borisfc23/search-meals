@@ -157,10 +157,10 @@
 </template>
 <script lang="ts" setup>
 import { Carousel, initTWE } from "tw-elements";
-import { onMounted, ref } from "vue";
+import { Ref, onMounted, ref } from "vue";
 import axiosClient from "../axiosClient";
 // const { meals } = defineProps({ meals: { required: true, type: Array } });
-const meals: Array<string> = ref<Array<string>>([]);
+const meals: Ref<Array<any>> = ref<Array<any>>([]);
 onMounted(async () => {
   initTWE({ Carousel });
   for (let index = 0; index < 3; index++) {

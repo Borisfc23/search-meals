@@ -58,7 +58,7 @@ import { useRoute } from "vue-router";
 import axiosClient from "../axiosClient";
 import YoutubeButton from "../components/YoutubeButton.vue";
 const route = useRoute();
-const meal: Ref<Object> = ref({});
+const meal: Ref<any> = ref({});
 onMounted(() => {
   axiosClient.get(`lookup.php?i=${route.params.id}`).then(({ data }) => {
     meal.value = data.meals[0] || {};

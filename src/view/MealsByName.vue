@@ -13,18 +13,22 @@
 </template>
 <script lang="ts" setup>
 import { Ref, computed, onMounted, ref } from "vue";
-import store from "../store";
+// import store from "../store";
 import { useRoute } from "vue-router";
 import Meals from "../components/Meals.vue";
+import peticiones from "../store2/index";
+
+const store = peticiones();
 
 const route = useRoute();
 const keyword: Ref<Object> = ref<Object>([]);
-const meals = computed(() => store.state.searchedMeals);
+// const meals = computed(() => store.state.searchedMeals);
+const meals = computed(() => store.searchedMeals);
 const searchMeals = () => {
   if (keyword.value) {
-    store.dispatch("searchMeals", keyword.value);
+    store.searchMeals(keyword.value);
   } else {
-    store.commit("setSearchedMeal", []);
+    store.searchedMeals = [];
   }
 };
 onMounted(() => {
