@@ -35,7 +35,7 @@ onMounted(() => {
   store.searchMealsByLetter(route.params.letter);
 });
 
-watch(route, (newValue, olValue) => {
+watch(route, () => {
   // store.dispatch("searchMealsByLetter", route.params.letter);
   store.searchMealsByLetter(route.params.letter);
 });

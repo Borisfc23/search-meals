@@ -22,7 +22,7 @@
       <div>
         <h2 class="text-2xl font-semibold mb-3">Ingredients</h2>
         <ul>
-          <template v-for="(item, index) of new Array(20)" :key="index">
+          <template v-for="index of new Array(20)" :key="index">
             <li v-if="meal[`strIngredient${index + 1}`]">
               {{ index + 1 }}. {{ meal[`strIngredient${index + 1}`] }}
             </li>
@@ -32,7 +32,7 @@
       <div>
         <h2 class="text-2xl font-semibold">Measures</h2>
         <ul>
-          <template v-for="(item, index) of new Array(20)" :key="index">
+          <template v-for="index of new Array(20)" :key="index">
             <li v-if="meal[`strMeasure${index + 1}`]">
               {{ index + 1 }}. {{ meal[`strMeasure${index + 1}`] }}
             </li>
