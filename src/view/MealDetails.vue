@@ -25,7 +25,8 @@
           <ul>
             <template v-for="(item, index) of new Array(20)" :key="index">
               <li v-if="meal[`strIngredient${index + 1}`]">
-                {{ index + 1 }}. {{ meal[`strIngredient${index + 1}`] }}
+                {{ index + 1 }}. {{ meal[`strIngredient${index + 1}`]
+                }}{{ item }}
               </li>
             </template>
           </ul>
@@ -35,7 +36,7 @@
           <ul>
             <template v-for="(item, index) of new Array(20)" :key="index">
               <li v-if="meal[`strMeasure${index + 1}`] != ('' || ' ')">
-                {{ index + 1 }}. {{ meal[`strMeasure${index + 1}`] }}
+                {{ index + 1 }}. {{ meal[`strMeasure${index + 1}`] }}{{ item }}
               </li>
             </template>
           </ul>
@@ -80,7 +81,7 @@
   </template>
 </template>
 <script lang="ts" setup>
-import { Ref, computed, onMounted, ref } from "vue";
+import { Ref, computed, ref } from "vue";
 import { useRoute } from "vue-router";
 import axiosClient from "../axiosClient";
 import YoutubeButton from "../components/YoutubeButton.vue";
