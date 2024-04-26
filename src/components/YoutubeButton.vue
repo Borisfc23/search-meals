@@ -1,7 +1,7 @@
 <template>
   <a
     :href="props.href"
-    class="bg-red-600 rounded text-white px-3 py-2 hover:bg-red-500 transition-colors"
+    class="bg-red-600 rounded text-white px-3 py-2 hover:bg-red-500 transition-colors text-sm sm:text-base"
     target="_blank"
   >
     <slot></slot>

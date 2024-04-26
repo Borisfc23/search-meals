@@ -1,45 +1,14 @@
 <template>
-  <!-- <header class="bg-white shadow-md h-16 flex justify-between">
-    <router-link
-      :to="{ name: 'home' }"
-      class="inline-flex items-center px-5 font-bold text-3xl"
-      ><img
-        src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Tailwind_CSS_Logo.svg/320px-Tailwind_CSS_Logo.svg.png"
-        class="w-10 mr-1"
-        alt=""
-      />
-      Home</router-link
-    >
-    <div>
-      <router-link
-        :to="{ name: 'byName' }"
-        class="inline-flex items-center px-2 h-full transition-colors hover:bg-red-200"
-      >
-        Search Meals
-      </router-link>
-      <router-link
-        :to="{ name: 'byLetter' }"
-        class="inline-flex items-center px-2 h-full transition-colors hover:bg-red-200"
-      >
-        Meals By Letter</router-link
-      >
-      <router-link
-        :to="{ name: 'ingredients' }"
-        class="inline-flex items-center px-2 h-full transition-colors hover:bg-red-200"
-      >
-        Meals By Ingredients</router-link
-      >
-    </div>
-  </header> -->
-
   <!-- Main navigation container -->
   <nav
-    class="flex-no-wrap relative flex w-full items-center justify-between bg-zinc-50 py-2 shadow-dark-mild dark:bg-neutral-700 lg:flex-wrap lg:justify-start lg:py-4"
+    class="flex-no-wrap relative flex w-full items-center justify-between bg-red-700 py-2 shadow-dark-mild lg:flex-wrap lg:justify-start lg:py-4"
   >
-    <div class="flex w-full flex-wrap items-center justify-between px-3">
+    <div
+      class="flex w-full sm:container sm:px-1 px-3 mx-auto flex-wrap items-center justify-between"
+    >
       <!-- Hamburger button for mobile view -->
       <button
-        class="block border-0 bg-transparent px-2 text-black/50 hover:no-underline hover:shadow-none focus:no-underline focus:shadow-none focus:outline-none focus:ring-0 dark:text-neutral-200 lg:hidden"
+        class="block border-0 bg-transparent text-black/50 hover:no-underline hover:shadow-none focus:no-underline focus:shadow-none focus:outline-none focus:ring-0 dark:text-neutral-200 lg:hidden"
         type="button"
         data-twe-collapse-init
         data-twe-target="#navbarSupportedContent1"
@@ -74,49 +43,60 @@
         <!-- Logo -->
         <router-link
           :to="{ name: 'home' }"
-          class="mb-4 me-5 ms-2 mt-3 flex items-center text-neutral-900 hover:text-neutral-900 focus:text-neutral-900 dark:text-neutral-200 dark:hover:text-neutral-400 dark:focus:text-neutral-400 lg:mb-0 lg:mt-0"
+          class="mb-4 me-5 mt-3 flex items-center text-neutral-900 hover:text-neutral-900 focus:text-neutral-900 dark:text-neutral-200 dark:hover:text-neutral-400 dark:focus:text-neutral-400 lg:mb-0 lg:mt-0"
           href="#"
         >
-          <img
-            src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Tailwind_CSS_Logo.svg/320px-Tailwind_CSS_Logo.svg.png"
-            class="w-10 mr-1"
-            loading="lazy"
-            alt=""
-          />
+          <span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-8 w-8 text-yellow-400 mr-1"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
+              />
+            </svg>
+          </span>
+          <h1 class="text-2xl font-bold text-gray-50">RecipesHealth</h1>
         </router-link>
         <!-- Left navigation links -->
         <ul
           class="list-style-none me-auto flex flex-col ps-0 lg:flex-row"
           data-twe-navbar-nav-ref
         >
-          <li class="mb-4 lg:mb-0 lg:pe-2" data-twe-nav-item-ref>
+          <li class="lg:mb-0 lg:pe-2" data-twe-nav-item-ref>
             <!-- Dashboard link -->
             <router-link
               :to="{ name: 'byName' }"
-              class="text-black/60 transition duration-200 hover:text-black/80 hover:ease-in-out focus:text-black/80 active:text-black/80 motion-reduce:transition-none dark:text-white/60 dark:hover:text-white/80 dark:focus:text-white/80 dark:active:text-white/80 lg:px-2"
+              class="flex items-center space-x-2 text-black/60 transition duration-200 hover:text-black/80 hover:ease-in-out focus:text-black/80 active:text-black/80 motion-reduce:transition-none dark:text-white/60 dark:hover:text-white/80 dark:focus:text-white/80 dark:active:text-white/80 lg:px-2"
               data-twe-nav-link-ref
             >
-              Search Meals
+              <span>Meals</span>
             </router-link>
           </li>
           <!-- Team link -->
-          <li class="mb-4 lg:mb-0 lg:pe-2" data-twe-nav-item-ref>
+          <li class="lg:mb-0 lg:pe-2" data-twe-nav-item-ref>
             <router-link
               :to="{ name: 'byLetter' }"
-              class="text-black/60 transition duration-200 hover:text-black/80 hover:ease-in-out focus:text-black/80 active:text-black/80 motion-reduce:transition-none dark:text-white/60 dark:hover:text-white/80 dark:focus:text-white/80 dark:active:text-white/80 lg:px-2"
+              class="space-x-2 transition duration-200hover:ease-in-out focus:text-black/80 active:text-black/80 motion-reduce:transition-none dark:text-white/60 dark:hover:text-white/80 dark:focus:text-white/80 dark:active:text-white/80 lg:px-2"
               data-twe-nav-link-ref
             >
-              Meals By Letter</router-link
-            >
+              <span>Letters</span>
+            </router-link>
           </li>
           <!-- Projects link -->
-          <li class="mb-4 lg:mb-0 lg:pe-2" data-twe-nav-item-ref>
+          <li class="lg:mb-0 lg:pe-2" data-twe-nav-item-ref>
             <router-link
               :to="{ name: 'ingredients' }"
               class="text-black/60 transition duration-200 hover:text-black/80 hover:ease-in-out focus:text-black/80 active:text-black/80 motion-reduce:transition-none dark:text-white/60 dark:hover:text-white/80 dark:focus:text-white/80 dark:active:text-white/80 lg:px-2"
               data-twe-nav-link-ref
             >
-              Meals By Ingredients</router-link
+              Ingredients</router-link
             >
           </li>
         </ul>
@@ -124,148 +104,56 @@
       </div>
 
       <!-- Right elements -->
-      <div class="relative flex items-center">
-        <!-- Icon -->
-        <a class="me-4 text-neutral-600 dark:text-white" href="#">
-          <span class="[&>svg]:w-5">
+      <div class="relative flex flex-col items-center">
+        <div
+          class="lg:flex flex-co hidden items-center space-x-2 bg-white py-1 px-2 rounded-full"
+        >
+          <span>
             <svg
               xmlns="http://www.w3.org/2000/svg"
+              class="h-6 w-6 text-gray-600"
+              fill="none"
               viewBox="0 0 24 24"
-              fill="currentColor"
+              stroke="currentColor"
             >
               <path
-                d="M2.25 2.25a.75.75 0 000 1.5h1.386c.17 0 .318.114.362.278l2.558 9.592a3.752 3.752 0 00-2.806 3.63c0 .414.336.75.75.75h15.75a.75.75 0 000-1.5H5.378A2.25 2.25 0 017.5 15h11.218a.75.75 0 00.674-.421 60.358 60.358 0 002.96-7.228.75.75 0 00-.525-.965A60.864 60.864 0 005.68 4.509l-.232-.867A1.875 1.875 0 003.636 2.25H2.25zM3.75 20.25a1.5 1.5 0 113 0 1.5 1.5 0 01-3 0zM16.5 20.25a1.5 1.5 0 113 0 1.5 1.5 0 01-3 0z"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
               />
             </svg>
           </span>
-        </a>
-
-        <!-- First dropdown container -->
-        <div
-          class="relative"
-          data-twe-dropdown-ref
-          data-twe-dropdown-alignment="end"
-        >
-          <!-- First dropdown trigger -->
-          <a
-            class="me-4 flex items-center text-neutral-600 dark:text-white"
-            href="#"
-            id="dropdownMenuButton1"
-            role="button"
-            data-twe-dropdown-toggle-ref
-            aria-expanded="false"
-          >
-            <!-- Dropdown trigger icon -->
-            <span class="[&>svg]:w-5">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M5.25 9a6.75 6.75 0 0113.5 0v.75c0 2.123.8 4.057 2.118 5.52a.75.75 0 01-.297 1.206c-1.544.57-3.16.99-4.831 1.243a3.75 3.75 0 11-7.48 0 24.585 24.585 0 01-4.831-1.244.75.75 0 01-.298-1.205A8.217 8.217 0 005.25 9.75V9zm4.502 8.9a2.25 2.25 0 104.496 0 25.057 25.057 0 01-4.496 0z"
-                  clip-rule="evenodd"
-                />
-              </svg>
-            </span>
-            <!-- Notification counter -->
-            <span
-              class="absolute -mt-4 ms-2.5 rounded-full bg-danger px-[0.35em] py-[0.15em] text-[0.6rem] font-bold leading-none text-white"
-              >1</span
-            >
-          </a>
-          <!-- First dropdown menu -->
-          <ul
-            class="absolute z-[1000] float-left m-0 hidden min-w-max list-none overflow-hidden rounded-lg border-none bg-white bg-clip-padding text-left text-base shadow-lg data-[twe-dropdown-show]:block dark:bg-surface-dark"
-            aria-labelledby="dropdownMenuButton1"
-            data-twe-dropdown-menu-ref
-          >
-            <!-- First dropdown menu items -->
-            <li>
-              <a
-                class="block w-full whitespace-nowrap bg-white px-4 py-2 text-sm font-normal text-neutral-700 hover:bg-zinc-200/60 focus:bg-zinc-200/60 focus:outline-none active:bg-zinc-200/60 active:no-underline dark:bg-surface-dark dark:text-white dark:hover:bg-neutral-800/25 dark:focus:bg-neutral-800/25 dark:active:bg-neutral-800/25"
-                href="#"
-                data-twe-dropdown-item-ref
-                >Action</a
-              >
-            </li>
-            <li>
-              <a
-                class="block w-full whitespace-nowrap bg-white px-4 py-2 text-sm font-normal text-neutral-700 hover:bg-zinc-200/60 focus:bg-zinc-200/60 focus:outline-none active:bg-zinc-200/60 active:no-underline dark:bg-surface-dark dark:text-white dark:hover:bg-neutral-800/25 dark:focus:bg-neutral-800/25 dark:active:bg-neutral-800/25"
-                href="#"
-                data-twe-dropdown-item-ref
-                >Another action</a
-              >
-            </li>
-            <li>
-              <a
-                class="block w-full whitespace-nowrap bg-white px-4 py-2 text-sm font-normal text-neutral-700 hover:bg-zinc-200/60 focus:bg-zinc-200/60 focus:outline-none active:bg-zinc-200/60 active:no-underline dark:bg-surface-dark dark:text-white dark:hover:bg-neutral-800/25 dark:focus:bg-neutral-800/25 dark:active:bg-neutral-800/25"
-                href="#"
-                data-twe-dropdown-item-ref
-                >Something else here</a
-              >
-            </li>
-          </ul>
+          <input
+            class="outline-none"
+            type="text"
+            placeholder="Search - press enter"
+            v-model="filtro"
+            @change="searchMealsNavBar"
+          />
         </div>
 
-        <!-- Second dropdown container -->
         <div
-          class="relative"
-          data-twe-dropdown-ref
-          data-twe-dropdown-alignment="end"
+          v-if="mealsSearch !== null && mealsSearch.length > 0"
+          :class="view == true ? 'show' : 'hide'"
+          class="contenedor-filtro"
         >
-          <!-- Second dropdown trigger -->
-          <a
-            class="flex items-center whitespace-nowrap transition duration-150 ease-in-out motion-reduce:transition-none"
-            href="#"
-            id="dropdownMenuButton2"
-            role="button"
-            data-twe-dropdown-toggle-ref
-            aria-expanded="false"
-          >
-            <!-- User avatar -->
-            <img
-              src="https://tecdn.b-cdn.net/img/new/avatars/2.jpg"
-              class="rounded-full"
-              style="height: 25px; width: 25px"
-              alt=""
-              loading="lazy"
-            />
-          </a>
-          <!-- Second dropdown menu -->
-          <ul
-            class="absolute z-[1000] float-left m-0 hidden min-w-max list-none overflow-hidden rounded-lg border-none bg-white bg-clip-padding text-left text-base shadow-lg data-[twe-dropdown-show]:block dark:bg-surface-dark"
-            aria-labelledby="dropdownMenuButton2"
-            data-twe-dropdown-menu-ref
-          >
-            <!-- Second dropdown menu items -->
-            <li>
-              <a
-                class="block w-full whitespace-nowrap bg-white px-4 py-2 text-sm font-normal text-neutral-700 hover:bg-zinc-200/60 focus:bg-zinc-200/60 focus:outline-none active:bg-zinc-200/60 active:no-underline dark:bg-surface-dark dark:text-white dark:hover:bg-neutral-800/25 dark:focus:bg-neutral-800/25 dark:active:bg-neutral-800/25"
-                href="#"
-                data-twe-dropdown-item-ref
-                >Action</a
-              >
-            </li>
-            <li>
-              <a
-                class="block w-full whitespace-nowrap bg-white px-4 py-2 text-sm font-normal text-neutral-700 hover:bg-zinc-200/60 focus:bg-zinc-200/60 focus:outline-none active:bg-zinc-200/60 active:no-underline dark:bg-surface-dark dark:text-white dark:hover:bg-neutral-800/25 dark:focus:bg-neutral-800/25 dark:active:bg-neutral-800/25"
-                href="#"
-                data-twe-dropdown-item-ref
-                >Another action</a
-              >
-            </li>
-            <li>
-              <a
-                class="block w-full whitespace-nowrap bg-white px-4 py-2 text-sm font-normal text-neutral-700 hover:bg-zinc-200/60 focus:bg-zinc-200/60 focus:outline-none active:bg-zinc-200/60 active:no-underline dark:bg-surface-dark dark:text-white dark:hover:bg-neutral-800/25 dark:focus:bg-neutral-800/25 dark:active:bg-neutral-800/25"
-                href="#"
-                data-twe-dropdown-item-ref
-                >Something else here</a
-              >
-            </li>
-          </ul>
+          <div v-for="(item, index) in mealsSearch" :key="index">
+            <div class="contenedor-search" @click="viewDetails(item.idMeal)">
+              <div class="content-img">
+                <img :src="item.strMealThumb" />
+              </div>
+              <div class="content-text">
+                <p>{{ item.strMeal }}</p>
+              </div>
+            </div>
+          </div>
         </div>
+        <template v-if="mealsSearch === null">
+          <div class="contenedor-notMeals">
+            <p class="text-base">The food does not exist</p>
+          </div>
+        </template>
       </div>
       <!-- Right elements -->
     </div>
@@ -273,10 +161,92 @@
 </template>
 <script setup lang="ts">
 import { Collapse, Dropdown, initTWE } from "tw-elements";
-import { onMounted } from "vue";
+import { Ref, computed, onMounted, ref } from "vue";
+import peticiones from "../store2/index";
+import router from "../router";
 
+const view = ref(false);
+const filtro: Ref<Object> = ref<Object>("");
+const store = peticiones();
+const mealsSearch: any = computed(() => {
+  if (filtro.value) {
+    if (store.searchedMealsFast.length > 0) {
+      view.value = true;
+    }
+  }
+  return store.searchedMealsFast;
+});
+
+const searchMealsNavBar = () => {
+  if (filtro.value) {
+    store.searchMealsFast(filtro.value);
+  } else {
+    store.searchedMealsFast = [];
+  }
+};
+const viewDetails = (id: any) => {
+  view.value = false;
+  router.push({ name: "mealDetails", params: { id: id } });
+  filtro.value = "";
+};
 onMounted(() => {
   initTWE({ Collapse, Dropdown });
 });
 </script>
-<style scoped></style>
+<style scoped>
+.show {
+  height: 120px;
+  transition: 0.5s all ease-in-out;
+}
+.hide {
+  height: 0;
+}
+.contenedor-filtro {
+  position: absolute;
+  border-radius: 4px;
+  left: 0;
+  top: 40px;
+  bottom: 0;
+  width: 100%;
+  overflow-y: scroll;
+  background-color: white;
+  z-index: 99999;
+}
+.contenedor-notMeals {
+  position: absolute;
+  border-radius: 4px;
+  left: 0;
+  top: 40px;
+  bottom: 0;
+  height: 60px;
+  width: 100%;
+  border: 1px solid gray;
+  background-color: white;
+  z-index: 99999;
+  transition: 0.5s all ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.contenedor-search {
+  display: flex;
+  align-items: center;
+
+  padding: 8px 12px;
+  cursor: pointer;
+}
+.contenedor-search:hover {
+  background-color: rgba(0, 0, 0, 0.045);
+}
+.contenedor-search .content-img {
+  margin-right: 1rem;
+}
+.contenedor-search .content-img img {
+  height: 46px;
+  width: 60px;
+}
+.contenedor-search .content-text p {
+  font-size: 12px;
+  font-weight: bold;
+}
+</style>

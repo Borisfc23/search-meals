@@ -6,3 +6,8 @@ https://tailwindcss.com/docs/guides/vite#vue
 yarn add vue-router@next 
 yarn add vuex@4
 npm install -D @tailwindcss/forms  =>con esto reseteamos los estilos del formulario
+****RECUERDA QUE SE AGREGO EN vite.config.js un base para githubpages
+agregar en package.json para github pages
+  "optionalDependencies": {
+    "@rollup/rollup-linux-x64-gnu": "4.9.5"
+  }

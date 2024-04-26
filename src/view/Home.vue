@@ -1,7 +1,7 @@
 <template>
-  <div>
-    <Slider />
-    <div class="p-2 sm:p-8">
+  <div class="sm:container sm:px-1 px-3 mx-auto">
+    <!-- <Slider /> -->
+    <div class="pt-5">
       <h1 class="text-4xl mb-5 font-bold text-red-600">Random Meals</h1>
       <Meals :meals="meals" />
     </div>
@@ -17,8 +17,9 @@ const meals: Ref<Array<any>> = ref<Array<any>>([]);
 const mealsSlide: Ref<Array<any>> = ref<Array<any>>([]);
 onMounted(async () => {
   try {
-    for (let index = 0; index < 9; index++) {
+    for (let index = 0; index < 12; index++) {
       const response = await axiosClient.get("random.php");
+
       meals.value.push(response.data.meals[0]);
     }
     for (let index = 0; index < 3; index++) {

@@ -19,7 +19,7 @@ const routes: Array<RouteRecordRaw> = [
         component: Home,
       },
       {
-        path: "/by-name/:name?",
+        path: "/by-name",
         name: "byName",
         component: MealsByName,
       },
@@ -29,7 +29,7 @@ const routes: Array<RouteRecordRaw> = [
         component: MealsByLetter,
       },
       {
-        path: "ingredients",
+        path: "/ingredients",
         name: "ingredients",
         component: Ingredients,
       },

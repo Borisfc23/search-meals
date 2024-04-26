@@ -4,6 +4,7 @@ import axiosClient from "../axiosClient";
 const peticiones = defineStore("store", {
   state: () => ({
     searchedMeals: [],
+    searchedMealsFast: [],
     mealsByLetter: [],
     mealsByIngredient: [],
   }),
@@ -21,6 +22,11 @@ const peticiones = defineStore("store", {
     searchMealsByIngredient(ingredient: any) {
       axiosClient.get(`filter.php?i=${ingredient}`).then(({ data }) => {
         this.mealsByIngredient = data.meals;
+      });
+    },
+    searchMealsFast(keyword: any) {
+      axiosClient.get(`search.php?s=${keyword}`).then(({ data }) => {
+        this.searchedMealsFast = data.meals;
       });
     },
   },

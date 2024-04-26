@@ -1,5 +1,5 @@
 <template>
-  <div class="p-2 sm:p-8">
+  <div class="sm:container sm:px-1 px-3 mx-auto pt-5">
     <h1 class="text-4xl mb-5 font-bold text-red-600">Meals by Letter</h1>
     <div
       class="flex justify-center flex-wrap gap-2 my-10 sm:w-3/4 md:w-full mx-auto"
@@ -13,12 +13,16 @@
         >{{ letter }}</router-link
       >
     </div>
-    <Meals :meals="meals" />
+    <template v-if="meals?.length > 0">
+      <Meals :meals="meals" />
+    </template>
+    <template v-else>
+      <p class="text-lg">Please select a letter</p>
+    </template>
   </div>
 </template>
 <script lang="ts" setup>
 import { Ref, computed, onMounted, ref, watch } from "vue";
-// import store from "../store";
 import { useRoute } from "vue-router";
 import Meals from "../components/Meals.vue";
 import peticiones from "../store2/index";
@@ -28,15 +32,12 @@ const store = peticiones();
 const route = useRoute();
 const letters: Ref<any> = ref("ABCDEFGHIJKLMNOPQRSTUVWXYZ");
 letters.value = letters.value.split("");
-// const meals = computed(() => store.state.mealsByLetter);
 const meals = computed(() => store.mealsByLetter);
 onMounted(() => {
-  // store.dispatch("searchMealsByLetter", route.params.letter);
   store.searchMealsByLetter(route.params.letter);
 });
 
 watch(route, () => {
-  // store.dispatch("searchMealsByLetter", route.params.letter);
   store.searchMealsByLetter(route.params.letter);
 });
 </script>

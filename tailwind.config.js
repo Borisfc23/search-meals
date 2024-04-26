@@ -8,5 +8,5 @@ export default {
   theme: {
     extend: {},
   },
-  plugins: [require("@tailwindcss/forms", "tw-elements/plugin.cjs")],
+  plugins: [require("tw-elements/plugin.cjs")],
 };

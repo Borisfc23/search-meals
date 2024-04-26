@@ -1,7 +1,7 @@
 <template lang="">
   <!-- Footer container -->
   <footer
-    class="bg-zinc-50 mt-5 text-center text-surface/75 dark:bg-neutral-700 dark:text-white/75 lg:text-left"
+    class="footer bg-zinc-50 mt-5 text-center text-surface/75 dark:bg-neutral-700 dark:text-white/75 lg:text-left"
   >
     <div
       class="flex items-center justify-center border-b-2 border-neutral-200 p-6 dark:border-white/10 lg:justify-between"
