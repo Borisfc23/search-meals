@@ -30,16 +30,23 @@ import peticiones from "../store2/index";
 const store = peticiones();
 
 const route = useRoute();
-const letters: Ref<any> = ref("ABCDEFGHIJKLMNOPQRSTUVWXYZ");
+const letters: Ref<any> = ref("ABCDEFGHIJKLMNOPQRSTUVWXY");
 letters.value = letters.value.split("");
 const meals = computed(() => store.mealsByLetter);
 onMounted(() => {
-  store.searchMealsByLetter(route.params.letter);
+  if (route.params.letter) {
+    store.searchMealsByLetter(route.params.letter as string);
+  }
 });
 
-watch(route, () => {
-  store.searchMealsByLetter(route.params.letter);
-});
+watch(
+  () => route.params.letter,
+  (newLetter) => {
+    if (newLetter) {
+      store.searchMealsByLetter(newLetter as string);
+    }
+  }
+);
 </script>
 <style scopped>
 .active {
